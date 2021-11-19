@@ -9,18 +9,6 @@
   justify-content: center;
   text-transform: uppercase;
 
-  @include tab-mid {
-    margin-bottom: 40px;
-  }
-
-  @include mob-large {
-      margin-bottom: 30px;
-  }
-
-  @include mob-mid {
-      margin-bottom: 20px;
-  }
-
   &__title {
     font-size: 60px;
     margin-bottom: 60px;
@@ -179,7 +167,7 @@
     }
   
     @include mob-mid {
-      width: 50%;
+      width: 60%;
     }
   }
 
@@ -189,7 +177,7 @@
     height: 60px;
     border: 2px solid $light-green;
     border-left: none;
-    background-color: $white;
+    background-color: white;
     position: relative;
 
     @include mob-large {

@@ -1347,21 +1347,6 @@ select {
   justify-content: center;
   text-transform: uppercase;
 }
-@media screen and (max-width: 767px) {
-  .footer {
-    margin-bottom: 40px;
-  }
-}
-@media screen and (max-width: 640px) {
-  .footer {
-    margin-bottom: 30px;
-  }
-}
-@media screen and (max-width: 425px) {
-  .footer {
-    margin-bottom: 20px;
-  }
-}
 .footer__title {
   font-size: 60px;
   margin-bottom: 60px;
@@ -1514,7 +1499,7 @@ select {
 }
 @media screen and (max-width: 425px) {
   .footer__input {
-    width: 50%;
+    width: 60%;
   }
 }
 .footer__btn {
