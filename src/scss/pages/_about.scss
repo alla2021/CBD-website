@@ -1,0 +1,221 @@
+.about {
+    min-height: 1260px;
+    background-color: $bg;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: $reg-oswald;
+    color: $black;
+
+    @include tab-mid {
+        min-height: 100vh;
+    }
+
+    &__company-logo {
+        background: url(../image/about/border.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        max-width: 690px;
+        width: 100%;
+        min-height: 200px;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 97px;
+
+        @include tab-mid {
+            margin-bottom: 40px;
+        }
+
+        @include mob-large {
+            margin-bottom: 30px;
+            background:none;
+        }
+
+        @include mob-mid {
+            margin-bottom: 20px;
+            background:none;
+        }
+
+        img {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+        }
+    }
+
+    &__block {
+        width: 100%;
+        max-width: 1270px;
+        margin: 0 auto;
+    }
+
+    &__list {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        margin-bottom: 50px;
+        width: 100%;
+        max-width: 1000px;
+        border-bottom: 1px solid $light-green;
+
+        @include tab-mid {
+            margin-bottom: 40px;
+        }
+
+        @include mob-mid {
+            margin-bottom: 20px;
+        }
+    }
+
+    &__item {
+        font-size: 30px;
+        text-transform: uppercase;
+        cursor: pointer;
+
+        &:hover {
+          opacity: 0.8;
+        }
+        
+        @include tab-mid {
+            font-size: 25px;
+        }
+
+        @include mob-mid {
+            font-size: 16px;
+        }
+    }
+
+    &__item.active {
+        border-bottom: 2px solid $black;
+    }
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-around;
+
+        @include tab-mid {
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @include mob-large {
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        @include mob-mid {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    &__tab {
+  
+        &_first.active {
+            display: block;
+        }
+
+        &_second {
+            display: none;
+        }
+
+        &_second.active {
+            display: block;
+        }
+
+        &_third {
+            display:none;
+        }
+
+        &_third.active {
+            display:none;
+        }
+    }
+
+    &__column {
+        &_text {
+            max-width: 400px;
+            width: 100%;
+            padding: 0 5px 0 50px;
+            color: $green-grey;
+
+            @include tab-mid {
+                padding: 0 5px 0 20px;
+            }
+    
+            @include mob-mid {
+                padding: 0 5px 0 10px;
+            }
+        }
+        &_images {
+            max-width: calc(11270px - 400px);
+            width: 100%;
+            padding-left: 30px;
+        }
+    }
+    &__img {
+        margin-bottom: 30px;
+    }
+     
+    &__title {
+        font-size: 24px;
+        text-transform: uppercase;
+        line-height: 37px;
+
+            @include tab-mid {
+                font-size: 20px;
+                line-height: 29px;
+            }
+
+            @include mob-mid {
+                font-size: 18px;
+                line-height: 24px;
+            }
+
+        &_first {
+            margin-bottom: 20px;
+
+            @include tab-mid {
+                margin-bottom: 10px;
+            }
+    
+            @include mob-mid {
+                margin-bottom: 5px;
+            }
+        }
+
+        &_second {
+            padding: 34px 0 43px;
+            max-width: 270px;
+            width: 100%;
+
+            @include tab-mid {
+                padding: 14px 0 23px;
+            }
+    
+            @include mob-mid {
+                padding: 10px 0 15px;
+            }
+        }
+    }
+    &__text {
+        margin-bottom: 30px;
+        line-height: 40px;
+        font-family: $light-oswald;
+        color: $green-grey;
+    }
+
+    img {
+        width: 100%;
+        max-width: 570px;
+        height: auto;
+    }
+}

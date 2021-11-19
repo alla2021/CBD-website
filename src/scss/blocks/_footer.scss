@@ -1,0 +1,242 @@
+.footer {
+  min-height: 650px;
+  background-color: $bg;
+  color: $dark-green;
+  font-family: $reg-oswald;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+
+  @include tab-mid {
+    margin-bottom: 40px;
+  }
+
+  @include mob-large {
+      margin-bottom: 30px;
+  }
+
+  @include mob-mid {
+      margin-bottom: 20px;
+  }
+
+  &__title {
+    font-size: 60px;
+    margin-bottom: 60px;
+    display: block;
+    position: relative;
+
+    &:before {
+      content: "";
+      display: block;
+      width: 370px;
+      height: 2px;
+      background: $green-grey;
+      left: 58%;
+      top: 50%;
+      transform: translateY(50%);
+      position: absolute;
+    }
+
+    &:after {
+        content: "";
+        display: block;
+        width: 370px;
+        height: 2px;
+        background: $green-grey;
+        right: 58%;
+        top: 50%;
+        transform: translateY(50%);
+        position: absolute;
+      }
+
+      @include tab {
+        font-size: 40px;
+        margin-bottom: 30px;
+        
+        &:before {
+          display: none;
+        }
+
+        &:after {
+          display: none;
+        }
+      }
+    
+      @include mob-large {
+        font-size: 35px;
+        margin-bottom: 25px;
+      }
+    
+      @include mob-mid {
+        font-size: 25px;
+        margin-bottom: 15px;
+      }
+    }
+
+  &__row {
+    margin: 0 auto 30px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    max-width: 1000px;
+    width: 100%;
+    
+    @include mob-large {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &__column {
+    max-width: calc(100% / 3);
+    width: 100%;
+  }
+
+  &__list {
+    font-size: 14px;
+
+    @include mob-large {
+      margin-bottom: 10px;
+    }
+
+    &_icons{
+      display: flex;
+      justify-content: center;
+      position: relative;
+      
+      &:after {
+        content: "";
+        display: block;
+        width: 45px;
+        height: 2px;
+        background: $green-grey;
+        right: 43%;
+        top: 63px;
+        position: absolute;
+        transform: rotate(90deg);
+      }
+
+      @include tab {
+        &:after {
+          display: none;
+        }
+      }      
+    }
+  }
+
+  &__item {
+    margin-bottom: 15px;
+
+      &:hover {
+        color: blue;
+        transform: scale(1.2);
+      }
+
+      &_icon {
+        padding: 0 20px;
+        margin-bottom: 0;
+        font-size: 18px;
+        position: relative;
+      }
+  }
+
+  &__subtitle {
+    margin-bottom: 30px;
+    font-size: 18px;
+    color: $black;
+  }
+
+  &__form {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto 50px;
+    max-width: calc(90px + 280px);
+    width: 100%;
+    position: relative;
+  
+    @include mob-large {
+      width: 90%;
+    }
+  
+    @include mob-mid {
+      width: 80%;
+    }
+  }
+
+  &__input {
+    max-width: 280px;
+    width: 100%;
+    height: 60px;
+    border: 2px solid $light-green;
+    border-right: none;
+    padding-left: 15px;
+    @include mob-large {
+      width: 90%;
+    }
+  
+    @include mob-mid {
+      width: 50%;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    max-width: 90px;
+    height: 60px;
+    border: 2px solid $light-green;
+    border-left: none;
+    background-color: $white;
+    position: relative;
+
+    @include mob-large {
+      width: 90%;
+    }
+  
+    @include mob-mid {
+      width: 50%;
+    }
+
+    &:before {
+      content: "";
+      display: block;
+      width: 45px;
+      height: 2px;
+      background: $light-green;
+      right: 66px;
+      bottom: 28px;
+      position: absolute;
+      transform: rotate(90deg);
+
+      @include mob-large {
+        &:before {
+          display: none;
+        }
+      }
+    
+      @include mob-mid {
+        &:before {
+          display: none;
+        }
+      }
+    }
+  }
+  &__arrow {
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__copy {
+    font-size: 11px;
+    display: block;
+    padding-top: 50px;
+  }
+  
+  &__icon {
+    color: $dark-green;
+  }
+}

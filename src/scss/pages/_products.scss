@@ -1,0 +1,149 @@
+.products {
+  min-height: 360px;
+  margin: 0 auto;
+  font-family: $reg-oswald;
+  background-color: $bg;
+
+  &__holder {
+    max-width: 600px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto 80px;
+
+   @include tab-mid {
+     margin-bottom:40px;
+   }
+
+    @include mob-large {
+      margin-bottom:20px;
+    }
+  }
+
+  &__title {
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-family: $reg-oswald;
+
+    @include tab-mid {
+      font-size: 24px;
+      letter-spacing: 5px;
+    }
+ 
+     @include mob-large {
+      font-size: 18px;
+     }
+  }
+
+  &__item {
+    text-align: center;
+    padding: 37px auto 75px;
+    margin: 0 20px;
+  }
+
+
+  &__cart {
+    border: 1px solid $green-border;
+    border-bottom: none;
+    background-color: $white;
+    padding-bottom: 55px;
+  }
+
+  &__reatings {
+    padding: 25px 0 20px;
+    color: $green-grey;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-bottom: 55px;
+  }
+
+  &__image{
+    img {
+      height: 250px;
+    }
+  }
+
+  &__buy {
+    display: flex;
+    background-color: $grey;
+    border: 1px solid #e1e1e1;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__price {
+    flex-grow: 3;
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+    font-family: $reg-oswald;
+    text-transform: uppercase;
+  }
+
+  &__buy-btn {
+    background-color: $green-grey;
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-family: $reg-oswald;
+    color: $white;
+    padding-left: 30px;
+    max-width: 185px;
+    min-height: 73px;
+
+    &::after {
+      content: "";
+      width: 50px;
+      height: 3px;
+      position: absolute;
+      right: 9%;
+      top: 50%;
+      background: white;
+    }
+
+    @include tab {
+      &::after {
+        display: none;
+      }
+    }
+
+    @include mob-large {
+      &::after {
+        display: none;
+      }
+    }
+}
+
+  &__buttons {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    color: $green-grey;
+    font-size: 40px;
+  }
+
+    &__button-left {
+      max-width: 130px;
+      width: 100%;
+      max-height: 100px;
+      height: 100%;
+      padding: 20px 0;
+    }
+
+    &__button-right {
+      max-width: 130px;
+      width: 100%;
+      max-height: 100px;
+      height: 100%;
+      padding: 20px 0;
+    
+    }
+  }

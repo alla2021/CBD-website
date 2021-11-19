@@ -1,0 +1,250 @@
+.intro {
+  background-image: url(../image/header-bg.png);
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  align-items:center;
+  position: relative;
+  color: $white;
+  margin: 0 auto;
+
+  &__row {
+    display: flex;
+    justify-content: end;
+    align-items:flex-end;
+
+    @include mob-large {
+      flex-direction: column;
+    }
+  }
+
+  &__column {
+    width: 50%;
+    margin: 0 20px;
+
+    @include  pc-only  {
+      padding: 95px 0 10px;
+    }
+
+    @include  tab  {
+      padding: 95px 0 10px;
+    }
+
+    @include tab-mid {
+      margin: 0;
+      width: 75%;
+    }
+    @include mob-large {
+      width: 100%;
+    }
+  }
+
+  &__holder {
+    max-width: 700px;
+    width: 100%;
+    display: flex;
+    text-align: end;
+    align-items: flex-end;
+    flex-direction: column;
+
+        @include tab-mid {
+          max-width: 500px;
+          width: 100%;
+        }
+
+        @include mob-large {
+          max-width: 400px;
+          width: 100%;
+          margin: 0 auto;
+          text-align: center;
+          align-items: center;
+        }
+
+        @include mob-mid {
+          max-width: 300px;
+          width: 100%;
+        }
+  }
+
+  &__title {
+    font-size: 55px;
+    line-height: 77px;
+    letter-spacing: 15px;
+    font-family: $reg-oswald;
+    margin-bottom: 35px;
+
+      @include tab-mid {
+        font-size: 40px;
+        line-height: 50px;
+        letter-spacing: 10px;
+      }
+
+      @include mob-large {
+        font-size: 35px;
+        line-height: 45px;
+        letter-spacing: 8px;
+        margin-bottom: 15px;
+      }
+
+      @include mob-mid {
+        font-size: 30px;
+        line-height: 40px;
+        letter-spacing: 5px;
+      }
+  }
+
+  &__subtitle {
+    font-size: 24px;
+    margin-bottom: 60px;
+    font-family: $light-oswald;
+    letter-spacing: 3px;
+
+    @include tab-mid {
+      margin-bottom: 20px;
+    }
+    
+    @include mob-large {
+      font-size: 20px;
+    }
+  }
+
+  &__products-link {
+    font-size: 18px;
+    letter-spacing: 3px;
+    font-family: $light-oswald;
+    margin-right: 10px;
+
+    @include mob-large {
+      font-size: 14px;
+    }
+
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+
+  &__btn {
+    padding: 25px 40px;
+    background-color: transparent;
+    border: 1px solid $white;
+    text-transform: uppercase;
+    position: relative;
+    margin-bottom: 25px;
+    text-align: start;
+    font-size: 20px;
+    font-family: $reg-oswald;
+    width: 250px;
+
+    &::after {
+      content: "";
+      width: 50px;
+      height: 2px;
+      position: absolute;
+      right: 10%;
+      top: 48%;
+      background: white;
+          
+    @include mob-large {
+      display: none;
+    }
+    }
+
+    &:hover {
+      background: $white;
+      color: $black;
+      border: 3px solid aqur-bg;
+      transition: all .5s ease;
+      
+      &::after {
+        background: $black;
+      }
+    }
+   
+    @include tab-mid {
+      padding: 20px 30px;
+      max-width: 230px;
+      width: 100%;
+      font-size: 16px;
+
+      &::after{
+        width: 20%;
+      }
+    }
+
+      @include mob-large {
+        padding: 10px 20px;
+        max-width: 180px;
+        width: 100%;
+      }
+  }
+
+  &__text-position {
+    font-family: $light-oswald;
+    font-size: 22px;
+    font-weight: 300;
+    color: $white;
+    display: inline;
+    line-height: 60px;
+    text-transform: uppercase;
+    position: absolute;
+    transform: rotate(270deg);
+    bottom: 160px;
+    left: 0;
+
+    &::after {
+      content: "";
+      width: 100px;
+      height: 2px;
+      position: absolute;
+      left: -68%;
+      bottom: 47%;
+      background: white;
+      }
+
+    @include tab-mid {
+      display: none;
+    }
+  }
+
+  &__scroll {
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    margin-bottom: 60px;
+    span {
+      width: 20px;
+      height: 20px;
+      display: block;
+      border-right: 2px solid #fff;
+      border-bottom: 2px solid #fff;
+      transform: rotate(45deg);
+      margin: -10px;
+      animation: animate 2s infinite;
+    }
+    
+    span:nth-child(2) {
+      animation-delay: -0.2s;
+    }
+    
+    span:nth-child(3) {
+      animation-delay: -0.4s;
+    }
+    
+    @keyframes animate {
+      0% {
+        opacity: 0;
+      }
+      50% {
+        opacity: 1;
+        transform: rotate(45deg) translate(10px, 10px);
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  }
+}
+
+

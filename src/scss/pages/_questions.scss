@@ -1,0 +1,98 @@
+.questions {
+  min-height: 800px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $bg;
+
+  @include tab-mid {
+    min-height: 100vh;
+  }
+
+  &__holder {
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__arrow {
+    display: inline;
+    padding-right: 10px;
+    align-items: center;
+  }
+
+  &__first-title {
+    font-size: 30px;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    text-align: center;
+    color: $black;
+    font-family: $reg-oswald;
+
+    @include tab-mid {
+      margin-bottom: 40px;
+    }
+
+    @include mob-large {
+      margin-bottom: 20px;
+      font-size: 20px;
+    }
+
+    @include mob-mid {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+  }
+
+  &__title-text {
+    font-size: 22px;
+    margin-bottom: 50px;
+    text-align: center;
+    font-family: $light-oswald;
+    color: $black;
+
+    @include tab-mid {
+      margin-bottom: 40px;
+    }
+
+    @include mob-mid {
+      margin-bottom: 20px;
+      font-size: 18px;
+    }
+  }
+
+  &__item {
+    padding: 25px 0;
+    border-top: 1px solid $light-green;
+
+    &_four {
+      border-bottom: 1px solid $light-green;
+    }
+  }
+
+  &__subtitle{
+    color: $dark-green;
+    text-align: left;
+    padding-right: 10px;
+    color: $dark-green;
+  }
+
+  &__content {
+    padding: 23px 0 23px 40px;
+    display: none;
+    font-family: $light-oswald;
+    font-size: 18px;
+
+    @include mob-mid {
+      font-size: 16px;
+    }
+  }
+
+  &__arrow-item {
+    font-size: 25px;
+  }
+
+  &__rotate {
+    transform: rotate(45deg);
+  }
+}

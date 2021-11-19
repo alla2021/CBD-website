@@ -1,0 +1,27 @@
+@import './reset';
+@import './fonts/icons';
+@import './fonts/fonts';
+@import './mixins';
+@import './variable';
+@import 'blocks/header';
+@import 'pages/intro';
+@import 'components/modal';
+@import 'components/cart.scss';
+@import 'pages/about';
+@import 'pages/products';
+@import 'pages/questions';
+@import 'pages/testimonials';
+@import 'blocks/footer';
+
+.body {
+  background-color: $bg;
+  font-family: $reg-oswald;
+}
+
+.container {
+  max-width: 1900px;
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+

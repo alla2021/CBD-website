@@ -1,0 +1,155 @@
+.testimonials {
+  background-image: url(../image/slider-bg.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  min-height: 800px;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  font-family: $light-oswald;
+  position: relative;
+
+  &__reatings {
+    margin-bottom: 30px;
+    color: $yellow;
+    font-size: 25px;
+  }
+
+  &__holder {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  &__text {
+    margin-bottom: 30px;
+    color: $white;
+    font-size: 22px;
+    line-height: 40px;
+    letter-spacing: 4px;
+
+    @include mob-large {
+      margin-bottom: 20px;
+      font-size: 18px;
+      line-height: 30px;
+    }
+  }
+
+  &__autor{
+    display: block;
+    font-size: 24px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: $white;
+    max-width: 200px;
+    width: 100%;
+    position: relative;
+    margin: 0 auto;
+
+    &:before {
+      content: "";
+      display: block;
+      width: 45px;
+      height: 2px;
+      background: $white;
+      position: absolute;
+      top: 19px;
+      left: 0;
+
+      @include tab-mid {
+        top: 16px;
+        left: 0;
+      }
+  
+      @include mob-large {
+        font-size: 14px;
+        top: 20px;
+        left: 0;
+      }
+    }
+  }
+}
+
+.text__position {
+  font-family: $light-oswald;
+  font-size: 22px;
+  font-weight: 300;
+  color: $white;
+  display: inline;
+  line-height: 60px;
+  text-transform: uppercase;
+  position: absolute;
+  transform: rotate(90deg);
+  bottom: 135px;
+  left: 0;
+
+  @include tab-mid {
+    display: none;
+  }
+
+}
+
+.slider {
+  min-width: 0;
+}
+
+.slick-list {
+  overflow: hidden;
+}
+.slick-track {
+  display: flex;
+}
+
+.btn {
+  position:absolute;
+  cursor: pointer;
+  color:$white;
+  font-size: 40px;
+
+  @include tab-mid {
+    font-size: 25px;
+    }
+}
+
+.prev-btn {
+  left: 50%;
+  bottom: 0;
+  z-index: 5;
+  border: 1px solid $white;
+  max-width: 130px;
+  width: 100%;
+  max-height: 100px;
+  height: 100%;
+  padding: 20px 0;
+
+  @include tab-mid {
+    max-width: 80px;
+    width: 100%;
+    max-height: 50px;
+    height: 100%;
+    padding: 10px 0;
+    }
+}
+
+.next-btn {
+  right: 50%;
+  bottom: 0;
+  z-index: 5;
+  border: 1px solid $white;
+  max-width: 130px;
+  width: 100%;
+  max-height: 100px;
+  height: 100%;
+  padding: 20px 0;
+
+  @include tab-mid {
+    max-width: 80px;
+    width: 100%;
+    max-height: 50px;
+    height: 100%;
+    padding: 10px 0;
+    }
+
+}
+

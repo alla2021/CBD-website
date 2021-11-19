@@ -1,0 +1,21 @@
+[{
+  "id":1,
+  "title":"CBD 500 MG ORANGE FLAVOR TINCTURE",
+  "img":"./image/product/product__one.png",
+  "price":49.99
+},{
+  "id": 2,
+  "title":"BLACK ICE CBD MUSCLE RUB 200MG",
+  "img":"./image/product/product__two.png",
+  "price":49.99
+},{
+  "id":3,
+  "title":"Clock",
+  "img":"./image/product/product__three.png",
+  "price":49.99
+},{
+  "id": 4,
+  "title":"CBD COFFEE 100 MG",
+  "img":"./image/product/product__three.png",
+  "price":19.99
+}]
