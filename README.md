@@ -1,2 +1,2 @@
 # CBD
-https://alla2021.github.io/CBD/
+https://alla2021.github.io/CBD-website/
