@@ -46,10 +46,11 @@ document.addEventListener("DOMContentLoaded", function() {
 	});
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-   const addToCartButtons = document.querySelectorAll(".add-to-cart");
-   const cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+const addToCartButtons = document.querySelectorAll(".add-to-cart");
+let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
 
+document.addEventListener("DOMContentLoaded", function () {
+   
    function updateCart() {
       const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
       const cartCount = document.getElementById("cart-btn");
@@ -82,7 +83,6 @@ document.addEventListener("DOMContentLoaded", function () {
          price: parseFloat(price),
          id: id,
       };
-
          addToLocalStorage(item);
       }
    }
@@ -91,40 +91,62 @@ document.addEventListener("DOMContentLoaded", function () {
    addToCartButtons.forEach(function (button) {
       button.addEventListener("click", handleAddToCartClick);
    });
+
+   //showCart
+   const openBtnCart = document.getElementById('cart-btn');
+   const showCart = document.getElementById('cart-content');
+
+   openBtnCart.addEventListener('click', function () {
+      if (cartItems.length > 0) {
+         showCart.style.display = "block";
+         updateCartUI();
+      } else {
+         alert("Your cart is empty. Add some items!");
+      }
+   });
+
+   function updateCartUI() {
+      const totalAmount = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+
+      showCart.innerHTML = `
+      <div class="modal-cart__wrapper">
+      <span class="modal-cart__icon icon-cross" id="cart-btn-close"></span>
+      <h3 class="modal-cart__title">Cart</h3>
+      <div class="modal-cart__items">
+            ${cartItems.map(item => `
+               <div class="modal-cart__item">
+                  <span class="modal-cart__item-name">${item.name}</span>
+                  <span class="modal-cart__item-price">$${item.price.toFixed(2)}</span>
+                  <span class="modal-cart__item-quantity">${item.quantity}</span>
+                  <span class="modal-cart__item-total">$${(item.price * item.quantity).toFixed(2)}</span>
+               </div>
+            `).join('')}
+            </div>
+            <div class="total">Total: $${totalAmount.toFixed(2)}</div>
+      <div class="modal-cart__holder">
+            <button class="modal-cart__btn" id="buy-cart" >Buy</button>
+            <button class="modal-cart__btn" id="clear-cart">Clear</button>
+            </div>
+      </div>`
+
+      const clearCartButton = document.getElementById("clear-cart");
+      const closeBtnCart = document.getElementById('cart-btn-close');
+
+      clearCartButton.addEventListener("click", function () {
+         localStorage.removeItem("cartItems");
+         cartItems = []; 
+         updateCartUI();
+         updateCart()
+         showCart.style.display = "none"; 
+      });
+
+      closeBtnCart.addEventListener('click', function () {
+         showCart.style.display = "none";
+         openBtnCart.style.display = "block";
+      })
+   }
+
 });
-
-//showCart
-const openBtnCart = document.getElementById('cart-btn');
-const showCart = document.getElementById('cart-content');
-
-showCart.innerHTML = `
-<div class="modal-cart__wrapper">
-  <span class="modal-cart__icon icon-cross" id="cart-btn-close"></span>
-  <h3 class="modal-cart__title">Cart</h3>
-  <div class="modal-cart__holder">
-      <button class="modal-cart__btn" id="buy-cart" >Buy</button>
-      <button class="modal-cart__btn" id="clear-cart">Clear</button>
-      </div>
- </div>`
-
- const clearCartButton = document.getElementById("clear-cart");
-
- clearCartButton.addEventListener("click", function () {
-   localStorage.removeItem("cartItems");
-   cartItems = []; 
- });
-
- 
-const closeBtnCart = document.getElementById('cart-btn-close');
-
-openBtnCart.addEventListener('click', function () {
-  showCart.style.display = "block";
-   })
-
-closeBtnCart.addEventListener('click', function () {
-  showCart.style.display = "none";
-  openBtnCart.style.display = "block";
-})
 
 
 $(document).ready(function(){
@@ -201,7 +223,7 @@ closeBtn.addEventListener('click', function () {
     modal.style.display = "none";
     openBtn.style.display = "block";
    })
-   
+  
 
 //scroll
 $(document).ready(function () {

@@ -51,4 +51,4 @@ closeBtn.addEventListener('click', function () {
     modal.style.display = "none";
     openBtn.style.display = "block";
    })
-   
+  
