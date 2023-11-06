@@ -52,28 +52,3 @@ closeBtn.addEventListener('click', function () {
     openBtn.style.display = "block";
    })
    
-//showCart
-const openBtnCart = document.getElementById('cart-btn');
-const showCart = document.getElementById('cart-content');
-
-showCart.innerHTML = `
-<div class="modal-cart__wrapper">
-  <span class="modal-cart__icon icon-cross" id="cart-btn-close"></span>
-  <h3 class="modal-cart__title">Cart</h3>
-  <div class="modal-cart__holder">
-      <button class="modal-cart__btn" id="buy-cart" >Buy</button>
-      <button class="modal-cart__btn" id="clear-cart">Clear</button>
-      </div>
- </div>`
-
-const closeBtnCart = document.getElementById('cart-btn-close');
-
-openBtnCart.addEventListener('click', function () {
-  showCart.style.display = "block";
-   })
-
-closeBtnCart.addEventListener('click', function () {
-  showCart.style.display = "none";
-  openBtnCart.style.display = "block";
-   })
-
