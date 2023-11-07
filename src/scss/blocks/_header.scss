@@ -94,12 +94,38 @@
     @include tab-mid {
       padding: 10px;
     }
+
+    &_search{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      input {
+        width: 60%;
+        background-color: transparent;
+        color: $white;
+      }
+
+      input::placeholder {
+        color: white;
+        text-transform: uppercase;
+      }
+      
+      input:focus {
+        border: 2px solid white; 
+      }
+      button{
+        background-color: transparent;
+        padding-left: 3px;
+        width: 10%;
+        color: $white;
+      }
+    }
   }
 
   &__btn-search {
     padding-right: 5px;
   }
-
 
 
   &__nav {

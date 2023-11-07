@@ -52,6 +52,10 @@ select {
   border: none;
 }
 
+input {
+  all: unset;
+}
+
 @font-face {
   font-family: "icomoon";
   src: url("../fonts/icomoon.eot?tjymrk");
@@ -229,6 +233,29 @@ select {
   .header__button {
     padding: 10px;
   }
+}
+.header__button_search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.header__button_search input {
+  width: 60%;
+  background-color: transparent;
+  color: #f7f8f3;
+}
+.header__button_search input::placeholder {
+  color: white;
+  text-transform: uppercase;
+}
+.header__button_search input:focus {
+  border: 2px solid white;
+}
+.header__button_search button {
+  background-color: transparent;
+  padding-left: 3px;
+  width: 10%;
+  color: #f7f8f3;
 }
 .header__btn-search {
   padding-right: 5px;
@@ -679,7 +706,7 @@ select {
 }
 
 .modal-cart {
-  width: 30%;
+  width: 50%;
   min-height: 200px;
   margin: 0 auto;
   position: absolute;
@@ -709,6 +736,13 @@ select {
   .modal-cart {
     width: 100%;
   }
+}
+.modal-cart__items {
+  width: 100%;
+}
+.modal-cart__total-title {
+  font-size: 20px;
+  font-weight: bold;
 }
 .modal-cart__btn {
   padding: 15px 25px;
@@ -1508,7 +1542,7 @@ select {
   height: 60px;
   border: 2px solid #ced6af;
   border-left: none;
-  background-color: #f7f8f3;
+  background-color: white;
   position: relative;
 }
 @media screen and (max-width: 640px) {

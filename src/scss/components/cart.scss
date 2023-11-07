@@ -1,5 +1,5 @@
 .modal-cart {
-    width: 30%;
+    width: 50%;
     min-height: 200px;
     margin: 0 auto;
     position: absolute;
@@ -24,6 +24,15 @@
 
     @include mob-mid {
       width: 100%;
+    }
+
+    &__items {
+      width: 100%;
+    }
+
+    &__total-title{
+      font-size: 20px;
+      font-weight: bold;
     }
 
     &__btn {
