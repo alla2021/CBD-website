@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
    function updateCart() {
       const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
       const cartCount = document.getElementById("cart-btn");
-      cartCount.textContent = "CART " + totalQuantity;
+      cartCount.textContent = "CART " + "("+totalQuantity+")";
    }
 
    function addToLocalStorage(item) {

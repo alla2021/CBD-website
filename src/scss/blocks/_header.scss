@@ -78,7 +78,7 @@
 
     @include mob-large {
       padding: 0;
-     }
+    }
   }
 
   &__button {
@@ -94,11 +94,17 @@
     @include tab-mid {
       padding: 10px;
     }
+    
 
-    &_search{
+    &_search {
       display: flex;
       justify-content: center;
       align-items: center;
+
+      
+    @include tab {
+      display: none;
+    }
 
       input {
         width: 60%;
@@ -120,6 +126,8 @@
         width: 10%;
         color: $white;
       }
+
+
     }
   }
 

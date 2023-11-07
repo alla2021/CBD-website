@@ -16,10 +16,10 @@
     display: none;
     
     @include tab-mid {
-      width: 50%;
+      width: 90%;
     }
     @include mob-large {
-      width: 70%;
+      width: 90%;
     }
 
     @include mob-mid {

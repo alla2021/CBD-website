@@ -179,6 +179,7 @@
     border-left: none;
     background-color: white;
     position: relative;
+    height: 64px;
 
     @include mob-large {
       width: 90%;
@@ -187,7 +188,7 @@
     @include mob-mid {
       width: 50%;
     }
-
+  
     &:before {
       content: "";
       display: block;

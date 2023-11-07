@@ -239,6 +239,11 @@ input {
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 1024px) {
+  .header__button_search {
+    display: none;
+  }
+}
 .header__button_search input {
   width: 60%;
   background-color: transparent;
@@ -724,12 +729,12 @@ input {
 }
 @media screen and (max-width: 767px) {
   .modal-cart {
-    width: 50%;
+    width: 90%;
   }
 }
 @media screen and (max-width: 640px) {
   .modal-cart {
-    width: 70%;
+    width: 90%;
   }
 }
 @media screen and (max-width: 425px) {
@@ -1544,6 +1549,7 @@ input {
   border-left: none;
   background-color: white;
   position: relative;
+  height: 64px;
 }
 @media screen and (max-width: 640px) {
   .footer__btn {
