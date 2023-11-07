@@ -17,7 +17,7 @@ function liveReload() {
   })
 
   gulp.watch('src/scss/**/*.scss', compileStyles); 
-  gulp.watch('src/script/*.js', transpileScript)
+  gulp.watch('src/script/**/*.js', transpileScript)
   gulp.watch('src/*.html').on('change', browserSync.reload)
 }
 
