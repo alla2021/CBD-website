@@ -16,7 +16,7 @@ function liveReload() {
     server: './src'
   })
 
-  gulp.watch('src/scss/*.scss', compileStyles)
+  gulp.watch('src/scss/**/*.scss', compileStyles); 
   gulp.watch('src/script/*.js', transpileScript)
   gulp.watch('src/*.html').on('change', browserSync.reload)
 }
@@ -29,7 +29,6 @@ function sassLinter (){
   .pipe(sassLint.format())
   .pipe(sassLint.failOnError())
 }
-
 
 function compileStyles() {
   return gulp.src('src/scss/main.scss')
