@@ -100,11 +100,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 //addToCart
-const addToCartButtons = document.querySelectorAll(".add-to-cart");
-let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
-
 document.addEventListener("DOMContentLoaded", function () {
-  
+  const addToCartButtons = document.querySelectorAll(".add-to-cart");
+  let cartItems = JSON.parse(localStorage.getItem("cartItems")) || [];
+
+  function fillLocalStorageFromAPI() {
+    fetch('https://alla2021.github.io/CBD-website/')
+      .then(response => response.json())
+      .then(data => {
+        localStorage.setItem("cartItems", JSON.stringify(data));
+        cartItems = data;
+      });
+  }
+
+  if (cartItems.length === 0) {
+    fillLocalStorageFromAPI();
+  }
+
+  // Функция для обновления корзины
+  function updateCart() {
+    const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+    const cartCount = document.getElementById("cart-btn");
+    cartCount.textContent = "CART " + "(" + totalQuantity + ")";
+  }
+
   function updateCart() {
     const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
     const cartCount = document.getElementById("cart-btn");
@@ -145,6 +164,13 @@ document.addEventListener("DOMContentLoaded", function () {
   addToCartButtons.forEach(function (button) {
     button.addEventListener("click", handleAddToCartClick);
   });
+});
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  
+  
 
   //showCart
   const openBtnCart = document.getElementById('cart-btn');
