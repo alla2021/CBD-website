@@ -77,6 +77,10 @@ function copyImages() {
     .pipe(gulp.dest('docs/image'));
 }
 
+function copyFonts() {
+  return gulp.src('src/fonts/**/*')
+    .pipe(gulp.dest('docs/fonts'));
+}
 
 function cleanUp() {
   return del('docs')
@@ -91,4 +95,4 @@ function archive() {
 exports.default = liveReload;
 exports.scss = compileStyles;
 exports.sassLinter= sassLinter;
-exports.build = gulp.series(cleanUp, gulp.parallel(buildStyles, buildScript, buildHtml, copyImages), archive);
+exports.build = gulp.series(cleanUp, gulp.parallel(buildStyles, buildScript, buildHtml, copyImages, copyFonts), archive);
