@@ -18,6 +18,7 @@ function liveReload() {
 
   gulp.watch('src/scss/**/*.scss', compileStyles); 
   gulp.watch('src/script/**/*.js', transpileScript)
+  gulp.watch('src/images/**/*', copyImages);  
   gulp.watch('src/*.html').on('change', browserSync.reload)
 }
 
@@ -46,41 +47,43 @@ function compileStyles() {
 }
 
 function transpileScript() {
-  return gulp.src('src/script/*.js')
+  return gulp.src(['src/script/*.js', '!src/script/main.js'])
     .pipe(concat('script.js'))
     .pipe(gulp.dest('src/js'))
     .pipe(browserSync.stream());
 }
 
+
 function buildStyles() {
   return gulp.src('src/css/*.css')
     .pipe(autoprefixer())
     .pipe(cleanCSS())
-    .pipe(gulp.dest('build/css'))
+    .pipe(gulp.dest('docs/css'))
 }
 
 function buildScript() {
   return gulp.src('src/js/*.js')
     .pipe(uglify())
-    .pipe(gulp.dest('build/js'))
+    .pipe(gulp.dest('docs/js'))
 }
 
 function buildHtml() {
   return gulp.src('src/*.html')
-    .pipe(gulp.dest('build'))
+    .pipe(gulp.dest('docs'))
 }
 
-function copiImages () {
-  return gulp.src('src/images/**/*')
-    .pipe(gulp.dest('build'));
-};
+function copyImages() {
+  return gulp.src('src/image/**/*')
+    .pipe(gulp.dest('docs/image'));
+}
+
 
 function cleanUp() {
-  return del('build')
+  return del('docs')
 }
 
 function archive() {
-  return gulp.src('build/**/**')
+  return gulp.src('docs/**/**')
     .pipe(zip('build.zip'))
     .pipe(gulp.dest('./'))
 }
@@ -88,4 +91,4 @@ function archive() {
 exports.default = liveReload;
 exports.scss = compileStyles;
 exports.sassLinter= sassLinter;
-exports.build = gulp.series(cleanUp, gulp.parallel(buildStyles, buildScript, buildHtml, copiImages), archive);
+exports.build = gulp.series(cleanUp, gulp.parallel(buildStyles, buildScript, buildHtml, copyImages), archive);

@@ -38,7 +38,10 @@
         <div class="header__column header__column_btn">
           <div class="header__nav-buttons">
             <button class="header__button header__button_login" id="btn-login">login</button>
-            <button class="header__button header__button_search" ><span class="header__btn-search icon-search"></span>search</button>
+            <div class="header__button header__button_search">
+              <input type="text" id="search-input" placeholder="Search...">
+              <button id="search-button"><span class="header__btn-search icon-search"></span></button>
+            </div>
             <button class="header__button header__button_card" id="cart-btn">card (0)</button>
           </div>
         </div>
@@ -173,7 +176,7 @@
                 </div>
                 <div class="products__buy">
                   <span class="products__price">$49.99 usd</span>
-                  <button class="products__buy-btn add-to-cart" >shop</button>
+                  <button class="products__buy-btn add-to-cart" data-name="CBD 500 MG ORANGE FLAVOR TINCTURE" data-price="49.99" data-id="1">shop</button>
               </div>
             </div>
             <div class="products__item">
@@ -189,7 +192,7 @@
                 </div>
                 <div class="products__buy">
                   <span class="products__price">$<p class="price">49.99</p> usd</span>
-                  <button class="products__buy-btn add-to-cart" data-name="Black ice" data-price="79.99" data-id="2">shop</button>
+                  <button class="products__buy-btn add-to-cart" data-name="BLACK ICE CBD MUSCLE RUB 200MG" data-price="79.99" data-id="2">shop</button>
               </div>
             </div>
             <div class="products__item">
@@ -205,7 +208,7 @@
                 </div>
                 <div class="products__buy">
                   <span class="products__price">$<p class="price">79.99</p> usd</span>
-                  <button class="products__buy-btn add-to-cart" data-name="Coffee 750" data-price="79.99" data-id="3">shop</button>
+                  <button class="products__buy-btn add-to-cart" data-name=">CBD CURCUMIN COFFEE 750 MG" data-price="79.99" data-id="3">shop</button>
               </div>
             </div>
             <div class="products__item">
@@ -354,7 +357,7 @@
         <h3 class="footer__subtitle">Subscribe to Newsletter</h3>
         <form action="#" method="GET" class="footer__form">
           <input type="email" required placeholder="Email" class="footer__input">
-          <button class="footer__btn"><span class="icon-arrow-right"></span></button>
+          <button class="footer__btn"><span class="footer__icon  icon-arrow-right"></span></button>
         </form>
         <span class="footer__copy"><a href="#">&#169;2018. CbD health.</a></span> 
       </div>
